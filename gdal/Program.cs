@@ -15,20 +15,20 @@ namespace gdal
       string runtime = "python312.dll";
       string pDllPath = @$"{osgeoRoot}\apps\Python312\{runtime}";
 
-      // Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
+      Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
+      Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
+      Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
       Environment.SetEnvironmentVariable("PYTHONNET_PYDLL", pDllPath, EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("PYTHONHOME", @$"{osgeoRoot}\apps\Python312", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("PATH", @$"{osgeoRoot}\apps\Python312\Scripts;C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBem", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("GDAL_DATA", @$"{osgeoRoot}\apps\gdal\share\gdal", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("GDAL_DRIVER_PATH", @$"{osgeoRoot}\apps\gdal\lib\gdalplugins", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("PROJ_DATA", @$"{osgeoRoot}\share\proj", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("OPENSSL_ENGINES", @$"{osgeoRoot}\lib\engines-3", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("SSL_CERT_FILE", @$"{osgeoRoot}\bin\curl-ca-bundle.crt", EnvironmentVariableTarget.Process);
-      // Environment.SetEnvironmentVariable("SSL_CERT_DIR", @$"{osgeoRoot}\apps\openssl\certs", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PYTHONHOME", @$"%OSGEO4W_ROOT%\apps\Python312", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PATH", @$"%OSGEO4W_ROOT%\apps\Python312\Scripts;C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBem", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("GDAL_DATA", @$"%OSGEO4W_ROOT%\apps\gdal\share\gdal", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("GDAL_DRIVER_PATH", @$"%OSGEO4W_ROOT%\apps\gdal\lib\gdalplugins", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PROJ_DATA", @$"%OSGEO4W_ROOT%\share\proj", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("OPENSSL_ENGINES", @$"%OSGEO4W_ROOT%\lib\engines-3", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("SSL_CERT_FILE", @$"%OSGEO4W_ROOT%\bin\curl-ca-bundle.crt", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("SSL_CERT_DIR", @$"%OSGEO4W_ROOT%\apps\openssl\certs", EnvironmentVariableTarget.Process);
 
-      // Runtime.PythonDLL = @$"{osgeoRoot}\apps\Python312\{runtime}";
+      // Runtime.PythonDLL = pDllPath;
 
       try
       {
