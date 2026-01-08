@@ -61,7 +61,9 @@ namespace gdal
           sys.path.append("Scripts");
 
           dynamic module = Py.Import("analyze");
-          module.readshp(@"C:\shp\tl_2025_us_state.shp");
+          // module.readshp(@"C:\shp\tl_2025_us_state.shp");
+
+          module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
         }
         catch (PythonException pex)
         {

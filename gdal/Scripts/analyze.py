@@ -30,5 +30,27 @@ def readshp(shpfile: str) -> None:
     shapefile = None
 
 
+def readfeature(shpfile: str, layernum: int) -> None:
+    """_summary_"""
+
+    shapefile = osgeo.ogr.Open(shpfile)
+
+    try:
+        assert shapefile is not None
+    except AssertionError as e:
+        raise RuntimeError("Could not open shapefile: %s" % shpfile) from e
+
+    layer = shapefile.GetLayer(0)
+    feature = layer.GetFeature(layernum)
+    print("Feature 2 has the following attributes:")
+    attributes = feature.items()
+    for key, value in attributes.items():
+        print(" %s = %s" % (key, value))
+
+    geometry = feature.GetGeometryRef()
+    geometryName = geometry.GetGeometryName()
+    print("Feature's geometry data consists of a %s" % geometryName)
+
+
 if __name__ == "__main__":
-    readshp("tl_2025_us_state.shp")
+    readshp("C:\\shp\\tl_2025_us_state.shp")
