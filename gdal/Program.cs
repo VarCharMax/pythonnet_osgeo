@@ -63,7 +63,9 @@ namespace gdal
           dynamic module = Py.Import("analyze");
           // module.readshp(@"C:\shp\tl_2025_us_state.shp");
 
-          module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
+          // module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
+
+          module.describegeometry(@"C:\shp\tl_2025_us_state.shp", 2);
         }
         catch (PythonException pex)
         {
