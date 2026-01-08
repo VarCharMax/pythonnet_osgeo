@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\dotnet\\gdal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|c:\\dev\\dotnet\\gdal\\gdal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|solutionrelative:gdal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|c:\\dev\\dotnet\\gdal\\gdal\\scripts\\analyze.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|solutionrelative:gdal\\scripts\\analyze.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|c:\\dev\\dotnet\\gdal\\gdal\\pythoninitialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|solutionrelative:gdal\\pythoninitialiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|c:\\dev\\dotnet\\gdal\\gdal\\batchrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|solutionrelative:gdal\\batchrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|c:\\dev\\dotnet\\gdal\\gdal\\operatingsystemhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1EF5EB3-8977-46D4-9FEF-5C4206864600}|gdal\\gdal.csproj|solutionrelative:gdal\\operatingsystemhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "analyze.py",
+              "DocumentMoniker": "C:\\dev\\dotnet\\gdal\\gdal\\Scripts\\analyze.py",
+              "RelativeDocumentMoniker": "gdal\\Scripts\\analyze.py",
+              "ToolTip": "C:\\dev\\dotnet\\gdal\\gdal\\Scripts\\analyze.py",
+              "RelativeToolTip": "gdal\\Scripts\\analyze.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2026-01-08T04:59:29.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OperatingSystemHelper.cs",
+              "DocumentMoniker": "C:\\dev\\dotnet\\gdal\\gdal\\OperatingSystemHelper.cs",
+              "RelativeDocumentMoniker": "gdal\\OperatingSystemHelper.cs",
+              "ToolTip": "C:\\dev\\dotnet\\gdal\\gdal\\OperatingSystemHelper.cs",
+              "RelativeToolTip": "gdal\\OperatingSystemHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:55:00.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PythonInitialiser.cs",
+              "DocumentMoniker": "C:\\dev\\dotnet\\gdal\\gdal\\PythonInitialiser.cs",
+              "RelativeDocumentMoniker": "gdal\\PythonInitialiser.cs",
+              "ToolTip": "C:\\dev\\dotnet\\gdal\\gdal\\PythonInitialiser.cs",
+              "RelativeToolTip": "gdal\\PythonInitialiser.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAMwOkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:54:52.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BatchRunner.cs",
+              "DocumentMoniker": "C:\\dev\\dotnet\\gdal\\gdal\\BatchRunner.cs",
+              "RelativeDocumentMoniker": "gdal\\BatchRunner.cs",
+              "ToolTip": "C:\\dev\\dotnet\\gdal\\gdal\\BatchRunner.cs",
+              "RelativeToolTip": "gdal\\BatchRunner.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:48:22.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\dotnet\\gdal\\gdal\\Program.cs",
+              "RelativeDocumentMoniker": "gdal\\Program.cs",
+              "ToolTip": "C:\\dev\\dotnet\\gdal\\gdal\\Program.cs",
+              "RelativeToolTip": "gdal\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAgwD8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:47:34.262Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
