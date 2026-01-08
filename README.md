@@ -6,3 +6,5 @@ The answer is "yes", but not using a virtual environment. First of all, I couldn
 I've added in all the environment variables that the OSGeoW batch file creates. A better approach would be to parse the batch file and create then using RE. Attempting to run the batch file inside the project didn't really work very well, and overall I don't think this is a very sound approach. I'm not sure how many of the settings are needed. I'll try finding out through a process of elimination.
 
 The main thing I found was that I had to give an absolute file path to the SHP file when invoking it from the console, even though this was not necessary when just running the Python script. Maybe using the Path module will fix this.
+
+OK, turns out none of the environment settings are necessary for reading SHP files(!).

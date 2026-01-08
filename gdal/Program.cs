@@ -10,36 +10,23 @@ namespace gdal
   {
     static void Main(string[] args)
     {
-      // string pathToVirtualEnv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", ".venv");
-      // string message;
-
       string osgeoRoot = @"C:\Users\rpark\AppData\Local\Programs\OSGeo4W";
 
       string runtime = "python312.dll";
       string pDllPath = @$"{osgeoRoot}\apps\Python312\{runtime}";
 
-      Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
       Environment.SetEnvironmentVariable("PYTHONNET_PYDLL", pDllPath, EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PYTHONHOME", @$"{osgeoRoot}\apps\Python312", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PATH", @$"{osgeoRoot}\apps\Python312\Scripts;C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBem", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("GDAL_DATA", @$"{osgeoRoot}\apps\gdal\share\gdal", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("GDAL_DRIVER_PATH", @$"{osgeoRoot}\apps\gdal\lib\gdalplugins", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PROJ_DATA", @$"{osgeoRoot}\share\proj", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("OPENSSL_ENGINES", @$"{osgeoRoot}\lib\engines-3", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("SSL_CERT_FILE", @$"{osgeoRoot}\bin\curl-ca-bundle.crt", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("SSL_CERT_DIR", @$"{osgeoRoot}\apps\openssl\certs", EnvironmentVariableTarget.Process);
-
-      Thread myThread = new(new ThreadStart(() => BatchRunner.Run(Path.Combine(@$"{osgeoRoot}\bin", "o4w_env.bat"))))
-      {
-        IsBackground = true
-      };
-      // myThread.Start();
-
-      // myThread.Join();
-
-      
+      // Environment.SetEnvironmentVariable("PYTHONHOME", @$"{osgeoRoot}\apps\Python312", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PATH", @$"{osgeoRoot}\apps\Python312\Scripts;C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBem", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("GDAL_DATA", @$"{osgeoRoot}\apps\gdal\share\gdal", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("GDAL_DRIVER_PATH", @$"{osgeoRoot}\apps\gdal\lib\gdalplugins", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PROJ_DATA", @$"{osgeoRoot}\share\proj", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("OPENSSL_ENGINES", @$"{osgeoRoot}\lib\engines-3", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("SSL_CERT_FILE", @$"{osgeoRoot}\bin\curl-ca-bundle.crt", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("SSL_CERT_DIR", @$"{osgeoRoot}\apps\openssl\certs", EnvironmentVariableTarget.Process);
 
       // Runtime.PythonDLL = @$"{osgeoRoot}\apps\Python312\{runtime}";
 
@@ -72,14 +59,9 @@ namespace gdal
         {
           dynamic sys = Py.Import("sys");
           sys.path.append("Scripts");
-          sys.path.append(osgeoRoot);
-          sys.path.append(@$"{osgeoRoot}\apps\Python312\Scripts");
-          sys.path.append(@$"{osgeoRoot}\bin");
-          sys.path.append(@$"{osgeoRoot}\apps\gdal\share\gdal");
-          sys.path.append(@$"{osgeoRoot}\apps\gdal\lib\gdalplugins");
 
           dynamic module = Py.Import("analyze");
-          module.readshp(@"C:\dev\dotnet\gdal\gdal\bin\Debug\net9.0\Scripts\tl_2025_us_state.shp");
+          module.readshp(@"C:\shp\tl_2025_us_state.shp");
         }
         catch (PythonException pex)
         {
@@ -95,10 +77,8 @@ namespace gdal
       {
         try
         {
-          // AppContext.SetSwitch("System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization", true); // No longer works in .NET 8+
           Py.GIL();
           PythonEngine.Shutdown();
-          // AppContext.SetSwitch("System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization", false); // Causes a corrupted memory exxception.
         }
         catch (PlatformNotSupportedException)
         {
