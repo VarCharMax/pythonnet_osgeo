@@ -1,6 +1,6 @@
 # pythonnet_osgeo
 
-This is my implementation of the code from the book _Python Geospatial Development_ by Erik Westra. It's fairly old, but the techniques are still current. It's a book I always meant to read when I was actually doing GIS work, but didn't get around to.
+This is my implementation of the code from the book _Python Geospatial Development_ by Erik Westra. It's fairly old, but the techniques are still mostly current. It's a book I always meant to read when I was actually doing GIS work, but I was discouraged by the fact that Python integration with .NET was basically non-existent at the time. IronPython didn't work with external libraries, so it was effectively useless.
 
 Having had some success with pythonnet, I wanted to see if I could get it to work with the OSGeo4W Python distribution.
 The answer is "yes", but I had to use the `virtualenv` manager, which works with arbitrary Python installations.
