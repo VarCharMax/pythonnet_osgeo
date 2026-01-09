@@ -42,10 +42,13 @@ namespace gdal
         {
           Console.WriteLine("\nDemonstrating the GDAL/OGR libraries:");
           dynamic module = Py.Import("analyze");
-          module.readshp(@"C:\shp\tl_2025_us_state.shp");
-          module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
-          module.describegeometry(@"C:\shp\tl_2025_us_state.shp", 2);
-          module.describepoints(@"C:\shp\tl_2025_us_state.shp", 53);
+
+          var shpFile = @"C:\shp\tl_2025_us_state.shp";
+
+          module.readshp(shpFile);
+          module.readfeature(shpFile, 2);
+          module.describegeometry(shpFile, 2);
+          module.describepoints(shpFile, 53);
 
           Console.WriteLine("\nDemonstrating the PROJ4 library:");
           module = Py.Import("proj");
