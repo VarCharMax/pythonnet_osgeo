@@ -11,4 +11,10 @@ The main thing I found was that I had to give an absolute file path to the SHP f
 
 OK, turns out _none_ of the environment settings are necessary for reading SHP files(!).
 
+I was finally able to create a virtual environment with wirtualenv:
+
+`virtualenv --python C:\Users\<user>\AppData\Local\Programs\OSGeo4W\apps\Python312\python3.exe .venv`
+
+I think I might have been pointing to the wrong exe in my earlier attempt.
+
 Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal.

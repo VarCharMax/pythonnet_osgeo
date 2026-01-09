@@ -10,15 +10,22 @@ namespace gdal
   {
     static void Main(string[] args)
     {
-      string osgeoRoot = @"C:\Users\rpark\AppData\Local\Programs\OSGeo4W";
+      // string osgeoRoot = @"C:\Users\rpark\AppData\Local\Programs\OSGeo4W";
 
-      string runtime = "python312.dll";
-      string pDllPath = @$"{osgeoRoot}\apps\Python312\{runtime}";
+      string pathToVirtualEnv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", ".venv");
+      string message;
 
-      Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
-      Environment.SetEnvironmentVariable("PYTHONNET_PYDLL", pDllPath, EnvironmentVariableTarget.Process);
+      using PythonInitialiser pyInit = new();
+      if ((message = pyInit.InitialisePy(pathToVirtualEnv)) != "")
+      {
+        Console.WriteLine(message);
+        return;
+      }
+
+      // Environment.SetEnvironmentVariable("PYTHONPATH", "", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PYTHONUTF8", "1", EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("OSGEO4W_ROOT", osgeoRoot, EnvironmentVariableTarget.Process);
+      // Environment.SetEnvironmentVariable("PYTHONNET_PYDLL", pDllPath, EnvironmentVariableTarget.Process);
       // Environment.SetEnvironmentVariable("PYTHONHOME", @$"%OSGEO4W_ROOT%\apps\Python312", EnvironmentVariableTarget.Process);
       // Environment.SetEnvironmentVariable("PATH", @$"%OSGEO4W_ROOT%\apps\Python312\Scripts;C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBem", EnvironmentVariableTarget.Process);
       // Environment.SetEnvironmentVariable("GDAL_DATA", @$"%OSGEO4W_ROOT%\apps\gdal\share\gdal", EnvironmentVariableTarget.Process);
@@ -29,44 +36,14 @@ namespace gdal
       // Environment.SetEnvironmentVariable("SSL_CERT_DIR", @$"%OSGEO4W_ROOT%\apps\openssl\certs", EnvironmentVariableTarget.Process);
 
       // Runtime.PythonDLL = pDllPath;
-
-      try
-      {
-        if (!PythonEngine.IsInitialized)
-        {
-          PythonEngine.Initialize();
-        }
-      }
-      catch (TypeInitializationException tie)
-      {
-        if (tie.InnerException is DllNotFoundException)
-        {
-          return; // "The specified Python DLL was not found. Please ensure that the correct version of Python is installed and configured.";
-        }
-        else
-        {
-          return; // tie.InnerException?.Message ?? tie.Message;
-        }
-      }
-      catch (Exception ex)
-      {
-        return; // ex.Message;
-      }
-
       using (Py.GIL())
       {
         try
         {
-          dynamic sys = Py.Import("sys");
-          sys.path.append("Scripts");
-
           dynamic module = Py.Import("analyze");
-          // module.readshp(@"C:\shp\tl_2025_us_state.shp");
-
-          // module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
-
-          // module.describegeometry(@"C:\shp\tl_2025_us_state.shp", 2);
-
+          module.readshp(@"C:\shp\tl_2025_us_state.shp");
+          module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
+          module.describegeometry(@"C:\shp\tl_2025_us_state.shp", 2);
           module.describepoints(@"C:\shp\tl_2025_us_state.shp", 53);
         }
         catch (PythonException pex)
@@ -79,25 +56,7 @@ namespace gdal
         }
       }
 
-      if (PythonEngine.IsInitialized)
-      {
-        try
-        {
-          Py.GIL();
-          PythonEngine.Shutdown();
-        }
-        catch (PlatformNotSupportedException)
-        {
-          // Ignore the exception as the shutdown likely proceeded enough
-        }
-        catch (PythonException)
-        {
-
-        }
-
-        Console.ReadKey();
-      }
-
+      Console.ReadKey();
     }
   }
 }
