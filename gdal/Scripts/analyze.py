@@ -1,7 +1,10 @@
 """_summary_"""
 
 import math
+import warnings
 import osgeo.ogr
+
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 
 def readshp(shpfile: str) -> None:
