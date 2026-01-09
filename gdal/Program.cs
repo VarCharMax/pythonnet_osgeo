@@ -40,7 +40,7 @@ namespace gdal
       {
         try
         {
-          Console.WriteLine("Demonstrating the GDAL/OGR libraries:");
+          Console.WriteLine("\nDemonstrating the GDAL/OGR libraries:");
           dynamic module = Py.Import("analyze");
           module.readshp(@"C:\shp\tl_2025_us_state.shp");
           module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
@@ -51,7 +51,7 @@ namespace gdal
           module = Py.Import("proj");
           module.reprojectpoints();
 
-          Console.WriteLine("\nDemonstrating the Shapely  library:");
+          Console.WriteLine("\nDemonstrating the Shapely library:");
           module = Py.Import("shape");
           module.describeshape();
         }
