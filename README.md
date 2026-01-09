@@ -17,6 +17,6 @@ OK, turns out _none_ of the environment settings are necessary for reading SHP f
 
 Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal. I'm not sure why the .venv environment doesn't take care of this, since the main issue appears to be setting the dll path - it does using pythonnet.
 
-The console app now suports reading SHP files using `gdal.ogr`, reprojecting using `pyproj`, calculations using `shapely`.
+The console app now supports reading SHP files using `gdal.ogr`, reprojecting using `pyproj`, calculations using `shapely`.
 
 Trying next for Mapnik, but it might be a bridge too far, at least on Windows, as Python3 support is not being maintained, apparently.
