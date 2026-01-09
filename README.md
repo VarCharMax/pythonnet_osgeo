@@ -19,7 +19,7 @@ Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.
 
 `C:\Users\<user>\AppData\Local\Programs\OSGeo4W\bin`.
 
-Not clear why this setting isn't needed when running via pythonnet.
+This is, of course, the home of the gdal library, so it makes sense, but it's not clear why this setting isn't needed when running via pythonnet. Also, this has to be set via the console - attempting to set it in the script didn't work. Presumably this means imports are resolved prior to script execution. I have added a call to the OSGeo4W.bat file in the ve `activate.bat` file.
 
 The console app now supports reading SHP files using `gdal/ogr`, reprojecting using `pyproj`, calculations using `shapely`.
 
