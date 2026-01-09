@@ -15,6 +15,10 @@ I was finally able to create a virtual environment with wirtualenv:
 
 `virtualenv --python C:\Users\<user>\AppData\Local\Programs\OSGeo4W\apps\Python312\python3.exe .venv`
 
-I think I might have been pointing to the wrong exe in my earlier attempt.
+(I think I might have been pointing to the wrong exe in my earlier attempt.)
+
+I modified my Python Initialiser to be compatible with the `virtualenv` library, whcih produces a different set of keys and values to `venv`.
 
 Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal.
+
+The console app now suports reading SHP files using `gdal.ogr`, reprojecting using `pyproj`, calculations using `shapely`.

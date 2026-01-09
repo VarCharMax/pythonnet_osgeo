@@ -45,6 +45,12 @@ namespace gdal
           module.readfeature(@"C:\shp\tl_2025_us_state.shp", 2);
           module.describegeometry(@"C:\shp\tl_2025_us_state.shp", 2);
           module.describepoints(@"C:\shp\tl_2025_us_state.shp", 53);
+
+          module = Py.Import("proj");
+          module.reprojectpoints();
+
+          module = Py.Import("shape");
+          module.describeshape();
         }
         catch (PythonException pex)
         {
