@@ -1,8 +1,5 @@
 ﻿using NETPython;
 using Python.Runtime;
-using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace gdal
 {
@@ -11,7 +8,7 @@ namespace gdal
     static void Main(string[] args)
     {
       // string osgeoRoot = @"C:\Users\rpark\AppData\Local\Programs\OSGeo4W";
-
+      // PATH=C:\Users\rpark\AppData\Local\Programs\OSGeo4W\bin
       string pathToVirtualEnv = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", ".venv");
       string message;
 

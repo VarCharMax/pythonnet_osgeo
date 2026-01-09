@@ -15,7 +15,11 @@ The main thing I found was that I had to give an absolute file path to the SHP f
 
 OK, turns out _none_ of the environment settings are necessary for reading SHP files(!).
 
-Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal. I'm not sure why the .venv environment doesn't take care of this, since the main issue appears to be setting the dll path - it does using pythonnet.
+Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal. I'm not sure why the .venv environment doesn't take care of this, since the main issue appears to be setting the dll path - it does using pythonnet. Update - turns out `PATH` is the only setting needed, and the critical value is:
+
+`C:\Users\<user>\AppData\Local\Programs\OSGeo4W\bin`.
+
+Not clear when this setting isn't needed when running via pythonnet.
 
 The console app now supports reading SHP files using `gdal/ogr`, reprojecting using `pyproj`, calculations using `shapely`.
 
