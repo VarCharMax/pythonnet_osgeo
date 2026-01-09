@@ -22,3 +22,5 @@ I modified my Python Initialiser to be compatible with the `virtualenv` library,
 Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.bat` file first in your terminal.
 
 The console app now suports reading SHP files using `gdal.ogr`, reprojecting using `pyproj`, calculations using `shapely`.
+
+Trying next for Mapnik, but it might be a bridge too far, at least on Windows, as Python3 support is not being maintained.
