@@ -247,7 +247,6 @@ namespace NETPython
           sys.path.append(scriptsFolder);
           sys.path.append($"{scriptsFolder}/.venv/Lib");
           sys.path.append($"{scriptsFolder}/.venv/Lib/{macosShim}site-packages");
-          sys.path.append(@"C:\Users\rpark\AppData\Local\Programs\OSGeo4W\apps\Python312\Scripts");
         }
       }
 
