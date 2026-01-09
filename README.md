@@ -19,7 +19,7 @@ Note: if you want to run the scripts manually, you need to execute the `OSGeo4W.
 
 `C:\Users\<user>\AppData\Local\Programs\OSGeo4W\bin`.
 
-Not clear when this setting isn't needed when running via pythonnet.
+Not clear why this setting isn't needed when running via pythonnet.
 
 The console app now supports reading SHP files using `gdal/ogr`, reprojecting using `pyproj`, calculations using `shapely`.
 
