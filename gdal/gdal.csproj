@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- This includes all files recursively within the 'Scripts' folder and maintains the folder structure in the output directory -->
-    <Content Include="Scripts\**\*.*">
+    <Content Include="Scripts\**\*.*" Exclude="Scripts\**\*.exe;Scripts\**\*.fish;Scripts\**\*.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
