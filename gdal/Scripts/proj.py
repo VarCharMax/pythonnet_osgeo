@@ -21,3 +21,7 @@ def reprojectpoints() -> None:
     geod = pyproj.Geod(ellps="clrk66")
     long2, lat2, invAngle = geod.fwd(long, lat, angle, distance)
     print("%0.4f, %0.4f is 10km northeast of %0.4f, %0.4f" % (lat2, long2, lat, long))
+
+
+if __name__ == "__main__":
+    reprojectpoints()

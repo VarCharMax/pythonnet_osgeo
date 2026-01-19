@@ -3,7 +3,7 @@
 import shapely
 
 
-def describeshape():
+def describeshape() -> None:
     """_summary_"""
     pt = shapely.geometry.Point(0, 0)
     circle = pt.buffer(1.0)
@@ -12,3 +12,7 @@ def describeshape():
     print("\nPrinting exterior coords:")
     for x, y in intersect.exterior.coords:
         print(x, y)
+
+
+if __name__ == "__main__":
+    describeshape()
